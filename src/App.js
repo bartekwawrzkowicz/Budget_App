@@ -1,9 +1,15 @@
+import React from 'react';
+import { Navigation } from 'components';
+import { ThemeProvider } from 'styled-components';
+import theme from 'utility/theme';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <ThemeProvider theme={theme} >
+      <div className="App">
+        <Navigation />
+      </div>
+    </ThemeProvider>
   );
 }
 
