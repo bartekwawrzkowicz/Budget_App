@@ -16,14 +16,13 @@ const items = [
   },
 ]
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={theme} >
       <GlobalStyles />
 
       <Router>
         <Navigation items={items} />
-
         <Routes>
           <Route exact path="/">Homepage</Route>
           <Route path="/budget">Budget Page</Route>
