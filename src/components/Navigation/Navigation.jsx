@@ -1,20 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-
+import { Container, List } from './Navigation.css';
 import { Wrapper } from 'components';
+import { Link } from 'react-router-dom';
 
-const Container = styled.div`
-    background-color: ${({ theme }) => theme.color.grey.light};
-    padding: ${({ theme }) => theme.spacing.small}px ${({ theme }) => theme.spacing.small}px;
-    justify-content: space-between;
-    margin: 20px 20px;
-`;
-
-const Navigation = () => {
+const Navigation = ({ items }) => {
     return (
         <Container>
             <Wrapper>
-                List
+                <List>
+                    {items.map(item => (
+                        <li key={item.to}>
+                            <Link to={item.to} >{item.content}</Link>
+                        </li>
+                    ))}
+                </List>
             </Wrapper>
         </Container>
     );
